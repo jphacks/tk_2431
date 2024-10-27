@@ -17,3 +17,4 @@ class Message:
     @classmethod
     def from_dict(cls, message: Dict[str, str]) -> Message:
         return cls(role=Role(message["role"]), content=message["content"])
+    

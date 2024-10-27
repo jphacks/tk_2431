@@ -52,7 +52,7 @@ def handle_message(event: MessageEvent) -> None:
         gpt_client = ChatGPTClient(model=Model.GPT35TURBO)
 
     gpt_client.add_message(
-        message=Message(role=Role.USER, content=text_message.text)
+        message=Message(role=Role.SYSTEM, content="あなたは優秀な心理カウンセラーです。事象に関してその人が持つ感情分析をします。その事象が好きか嫌いか教えてください"+text_message.text)
     )
     res = gpt_client.create()
     chatgpt_instance_map[user_id] = gpt_client
